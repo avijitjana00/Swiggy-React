@@ -1,41 +1,4 @@
-import React from "react";
-import ReactDOM from "react-dom/client";
-
-const Header = ()=>{
-    return(
-        <div className = "header">
-            <div className = "image-container">
-                <img className = "logo" src = "https://img.freepik.com/premium-vector/fast-free-food-delivery_1208773-925.jpg?semt=ais_hybrid&w=740&q=80"></img>
-            </div>
-            <div className = "nav-items">
-                <ul>
-                    <li>Home</li>
-                    <li>About Us</li>
-                    <li>Contact Us</li>
-                    <li>Cart</li>
-                </ul>
-
-            </div>
-        </div>
-    )
-}
-
-const RestanurentCard = (props)=>{
-    const {cloudinaryImageId, name, cuisines, costForTwoMessage, avgRating, deliveryTime} = props?.resData?.info;
-    return(
-        <div className="res-card" style={{backgroundColor: "#f0f0f0"}}>
-            <img className="res-logo" src={`https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_208,h_208,c_fit/${cloudinaryImageId}`}/>
-            <h2>{name}</h2>
-            <h4>{cuisines.join(", ")}</h4>
-            <h4>{costForTwoMessage}</h4>
-            <h4>{avgRating} stars</h4>
-            <h4>{deliveryTime} minutes</h4>
-
-        </div>
-    )
-}
-
-const restrauntList = [
+export const restrauntList = [
   {
     info: {
       id: "10894",
@@ -77,10 +40,10 @@ const restrauntList = [
       areaName: "BTM 2nd Stage",
       costForTwo: "₹200 for two",
       cuisines: ["Waffle", "Desserts", "Ice Cream"],
-      avgRating: 4.3,
+      avgRating: 3.8,
       veg: true,
       parentId: "2233",
-      avgRatingString: "4.3",
+      avgRatingString: "3.8",
       totalRatingsString: "1K+",
       deliveryTime: 32,
     },
@@ -95,9 +58,9 @@ const restrauntList = [
       areaName: "Btm Layout",
       costForTwo: "₹400 for two",
       cuisines: ["Burgers", "Beverages", "Cafe", "Desserts"],
-      avgRating: 4.2,
+      avgRating: 3.5,
       parentId: "630",
-      avgRatingString: "4.2",
+      avgRatingString: "3.5",
       totalRatingsString: "10K+",
       deliveryTime: 28,
     },
@@ -111,9 +74,9 @@ const restrauntList = [
       areaName: "Btm Layout",
       costForTwo: "₹350 for two",
       cuisines: ["Andhra", "Biryani", "South Indian"],
-      avgRating: 4.3,
+      avgRating: 3.0,
       parentId: "10496",
-      avgRatingString: "4.3",
+      avgRatingString: "3.0",
       totalRatingsString: "5K+",
       deliveryTime: 29,
     },
@@ -128,9 +91,9 @@ const restrauntList = [
       areaName: "JP Nagar",
       costForTwo: "₹300 for two",
       cuisines: ["American", "Snacks", "Turkish", "Portuguese", "Continental"],
-      avgRating: 4.3,
+      avgRating: 3.5,
       parentId: "371281",
-      avgRatingString: "4.3",
+      avgRatingString: "3.5",
       totalRatingsString: "10K+",
       deliveryTime: 39,
     },
@@ -192,9 +155,9 @@ const restrauntList = [
         "Healthy Food",
         "Desserts",
       ],
-      avgRating: 4.5,
+      avgRating: 3.0,
       parentId: "1252",
-      avgRatingString: "4.5",
+      avgRatingString: "3.0",
       totalRatingsString: "10K+",
       deliveryTime: 35,
     },
@@ -370,9 +333,9 @@ const restrauntList = [
       areaName: "Btm 2nd Stage",
       costForTwo: "₹250 for two",
       cuisines: ["Pizzas", "Italian", "Fast Food", "Desserts"],
-      avgRating: 4.5,
+      avgRating: 3.0,
       parentId: "11329",
-      avgRatingString: "4.5",
+      avgRatingString: "3.0",
       totalRatingsString: "500+",
       deliveryTime: 35,
     },
@@ -386,36 +349,11 @@ const restrauntList = [
       areaName: "BTM Layout",
       costForTwo: "₹450 for two",
       cuisines: ["Healthy Food", "Salads", "Keto", "Pastas"],
-      avgRating: 4.3,
+      avgRating: 3.0,
       parentId: "335529",
-      avgRatingString: "4.3",
+      avgRatingString: "3.0",
       totalRatingsString: "100+",
       deliveryTime: 35,
     },
   },
 ];
-
-const Body = ()=>{
-    return(
-        <div className="body">  
-            <div className="search">Search</div>
-                <div className="res-container">
-                    {restrauntList.map((resData)=>(
-                        <RestanurentCard resData={resData} key={resData.info.id}/>
-                    ))}
-                </div>
-        </div>
-    )
-}
-
-const AppLayout = ()=>{
-    return(
-        <div className="app">
-            <Header/>
-            <Body/>
-        </div>
-    )
-}
-
-const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(<AppLayout/>)
