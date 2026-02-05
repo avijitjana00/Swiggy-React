@@ -18,8 +18,9 @@
 
 ## episode-06
  1. monolith vs. microservice architectre 
- 2. useEffect(), which takes two args (i) callback function (ii) dependancy array
- 3. cors - cross origin resource sharing
- 4. shimmer UI - load fake page until get the actual data from api
- 5. conditional rendering
- 4. imortants of use local state variable(useState variable) instead of use normal javascript variable
+ 2. fetch live data using swiggy api
+ 3. useEffect(), which takes two args (i) callback function (ii) dependancy array
+ 4. cors - cross origin resource sharing
+ 5. shimmer UI - load fake page until get the actual data from api
+ 6. conditional rendering
+ 7. imortants of use local state variable(useState variable) instead of use normal javascript variable
