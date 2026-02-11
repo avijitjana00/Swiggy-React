@@ -112,3 +112,8 @@
     order: 2;
     margin-left: auto;
 }
+
+.user-card{
+    padding: 10px;
+    border: 1px solid black;
+}

@@ -57,3 +57,13 @@
     g. client side routing vs. server side routing
     h. to handle dynamic id from url/api react provided useParams hook get from react-router-dom
 
+## episode-08
+ 1. class based component
+ 2. diff b/w class based component vs. functional component
+ 3. way of access props in class component
+ 4. use of constructor() and super() method in class component
+ 5. create state variable in class component
+ 6. update state variable in class component
+ 7. Life cycle of react class component. ref - https://projects.wojtekmaj.pl/react-lifecycle-methods-diagram/
+ 8. componentDidMount(), componentDidUpdate(), componentWillUnmount()
+
