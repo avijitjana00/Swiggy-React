@@ -67,3 +67,9 @@
  7. Life cycle of react class component. ref - https://projects.wojtekmaj.pl/react-lifecycle-methods-diagram/
  8. componentDidMount(), componentDidUpdate(), componentWillUnmount()
 
+## episode-08
+ 1. custom hooks
+ 2. chunking / lazy loading / code spliting / on-demand loading / dynamic bundling -> load depends on demand
+ 3. lazy()
+ 4. Suspense()
+
