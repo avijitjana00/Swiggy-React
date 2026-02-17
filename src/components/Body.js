@@ -31,19 +31,33 @@ const Body = ()=>{
     return(
         <div className="body">  
             <div className="filter-restaurants">
-                <div className="search"> <button className="search-btn" onClick={()=>{
-                    const filteredRestaurants = listOfRestaurants.filter((filterData)=>filterData.info.name.toLowerCase().includes(searchText.toLowerCase()));
-                    setFilteredRestaurants(filteredRestaurants);
-                }}>Search</button>
-                    <input className="search-box" value={searchText} onChange={(e)=>setSearchText(e.target.value)}></input>
+                <div className="search p-4 mx-10 flex items-center">
+                    <input
+                        className="search-box border border-black px-3 py-2 rounded w-100 h-10"
+                        value={searchText}
+                        onChange={(e)=>setSearchText(e.target.value)}
+                    />
+                    <button
+                        className="search-btn ml-3 bg-slate-700 text-white px-4 py-2 rounded"
+                        onClick={()=>{
+                            const filteredRestaurants = listOfRestaurants.filter((filterData)=>filterData.info.name.toLowerCase().includes(searchText.toLowerCase()));
+                            setFilteredRestaurants(filteredRestaurants);
+                        }}
+                    >
+                        Search
+                    </button>
+                    <button
+                        className="filter-btn ml-3 bg-slate-700 text-white px-4 py-2 rounded"
+                        onClick={()=>{
+                            const filteredList = listOfRestaurants.filter((filterData)=>filterData.info.avgRating>4);
+                            setFilteredRestaurants(filteredList);
+                        }}
+                    >
+                        Top Rated Restaurants
+                    </button>
                 </div>
-                <button className="filter-btn" 
-                onClick={()=>{
-                    const filteredList = listOfRestaurants.filter((filterData)=>filterData.info.avgRating>4);
-                    setFilteredRestaurants(filteredList);
-                }}>Top Rated Restaurants</button>
             </div>
-                <div className="res-container">
+                <div className="res-container grid gap-4 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 px-6">
                     {filteredRestaurants.map((resData)=>(
                         <Link key = {resData.info.id} to={"/restaurantmenu/" + resData.info.id}>
                             <RestanurentCard resData={resData} />
