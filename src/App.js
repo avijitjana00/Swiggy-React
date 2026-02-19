@@ -6,14 +6,27 @@ import Contact from "./components/Contact";
 import Error from "./components/Error";
 import RestaurantMenu from "./components/RestaurantMenu";
 import {createBrowserRouter, RouterProvider, Outlet} from "react-router-dom";
-import { lazy, Suspense } from "react";
+import { lazy, Suspense, useState, useEffect } from "react";
+import UserContext from "./utils/UserContext";
 
 const AppLayout = ()=>{
+
+    const [ name, setName] = useState();
+
+    useEffect(()=>{
+        // API call to get user infor
+        const data = {
+            name: "Avijit Jana"
+        }
+        setName(data.name);
+    }, [])
     return(
-        <div className="app">
+        <UserContext.Provider value={{loggedInUser: name}}>
+            <div className="app">
             <Header/>
             <Outlet/>
         </div>
+        </UserContext.Provider>
     )
 }
 

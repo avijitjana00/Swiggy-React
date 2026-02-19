@@ -73,3 +73,19 @@
  3. lazy()
  4. Suspense()
 
+ ## episode-10
+ 1. introduce tailwind css
+
+ ## episode-11
+  1. Higher order component
+  2. Implemented accordian
+  3. controller vs. uncontrolled component
+  4. lifting the state up
+  5. porps drilling
+  6. react context
+    (i) create context -> import {createContext} from 'react';
+    (ii) use context -> import {useContext} from 'react';
+    (iii) use context in functional component
+    (iv) use conetext in class based component
+    (v) how to update context data 
+

@@ -1,4 +1,4 @@
-import RestanurentCard from "./RestaurantCard";
+import RestanurentCard, {IsRestaurantOpen} from "./RestaurantCard";
 import useInternetStatus from "../utils/useInternetStatus"; 
 import {useState, useEffect} from "react";
 import Shimmer  from "./shimmer";
@@ -9,6 +9,8 @@ const Body = ()=>{
     const [filteredRestaurants, setFilteredRestaurants] = useState([]);
     const [searchText, setSearchText] = useState("");
 
+    // HOC-wrapped component: pass the Restaurant card into the HOC to get a renderable component
+    const OpenRestaurantCard = IsRestaurantOpen(RestanurentCard);
     useEffect(()=>{
         fetchData();
     }, []);
@@ -57,10 +59,10 @@ const Body = ()=>{
                     </button>
                 </div>
             </div>
-                <div className="res-container grid gap-4 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 px-6">
+                <div className="res-container flex flex-wrap gap-4">
                     {filteredRestaurants.map((resData)=>(
                         <Link key = {resData.info.id} to={"/restaurantmenu/" + resData.info.id}>
-                            <RestanurentCard resData={resData} />
+                            {resData?.info?.isOpen ? <OpenRestaurantCard resData={resData} /> : <RestanurentCard resData={resData} />}
                         </Link>
                     ))}
                 </div>
