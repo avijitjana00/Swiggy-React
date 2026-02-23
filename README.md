@@ -89,3 +89,18 @@
     (iv) use conetext in class based component
     (v) how to update context data 
 
+## episode-12
+1. Redux
+2. React-Redux and Redux-Toolkit library
+3. how redux manage store data to write - click on button -> dispatch an action -> call reducer function -> update the slice of redux store
+4. how redux mange store to read data from redux store - > subscribe to the store(by using selector)
+5. configure redux store
+6. create slice
+7. <Provider>, useDispatch(), useSelector()
+8. configure redux store
+9. create slice
+10. redux dev tool extension
+11. RTK query
+
+
+
